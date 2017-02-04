@@ -34,9 +34,9 @@ def translate_transform(ax, by, cz):
 
 # Where ax, by, and cz are angles in degrees
 def rotate_transform(ax, by, cz):
-    axf = ax * math.pi / 180
-    byf = by * math.pi / 180
-    czf = cz * math.pi / 180
+    axf = math.radians(ax)
+    byf = math.radians(by)
+    czf = math.radians(cz)
 
     matx = np.matrix([[1,             0,             0, 0],
                       [0, math.cos(axf),-math.sin(axf), 0],

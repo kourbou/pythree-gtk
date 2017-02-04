@@ -50,41 +50,15 @@ class MyCube(Screen):
 
         # Vertices
         points = copy(self.props.model.vertices)
-        # points.append(mat([-1,-1,-1, 1]))
-        # points.append(mat([ 1, 1,-1, 1]))
-        # points.append(mat([ 1,-1, 1, 1]))
-        # points.append(mat([-1, 1, 1, 1]))
-        # points.append(mat([ 1,-1,-1, 1]))
-        # points.append(mat([-1,-1, 1, 1]))
-        # points.append(mat([-1, 1,-1, 1]))
-        # points.append(mat([ 1, 1, 1, 1]))
-       
-        edges = copy(self.props.model.edges) #[[3, 7],
-                # [7, 1],
-                # [1, 6],
-                # [6, 3],
-                # [5, 2],
-                # [2, 4],
-                # [4, 0],
-                # [0, 5],
-                # [0, 6],
-                # [4, 1],
-                # [2, 7],
-                # [5, 3],
-                # [5, 7],
-                # [2, 1],
-                # [4, 6],
-                # [0, 3]]
-
+        edges = copy(self.props.model.edges)
 
         # Rotate and push back
         for i in range(len(points)):
-            points[i] = points[i] * tra(-self.props.model.origin[0], -self.props.model.origin[1], -self.props.model.origin[2]) * rot(0, angle, 180) * tra(0, 0, -3)
-        
+            points[i] = points[i] * tra(0, 0, -10) * tra(-self.props.model.origin[0], -self.props.model.origin[1], -self.props.model.origin[2]) * rot(0, angle, 0)    
         # Perspective projection
         dpts = []
         for point in points:
-            proj = point * cam(30, 1, 1.0, 30.0)
+            proj = point * cam(30, w/h, 1.0, 10.0)
             dpts.append([proj[0,0]/proj[0,3], proj[0,1]/proj[0,3]])
         
         
