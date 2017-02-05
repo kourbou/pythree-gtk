@@ -23,7 +23,7 @@ class Screen(Gtk.DrawingArea):
         super().__init__()
 
         self.connect('draw', self.on_expose)
-        self.tick_timeout = GObject.timeout_add(17, self.tick, None)
+        self.tick_timeout = GObject.timeout_add(10, self.tick, None)
     
     def tick(self, e):
         self.queue_draw_area(0, 0, self.get_allocation().width, self.get_allocation().height)
