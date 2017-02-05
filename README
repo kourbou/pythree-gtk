@@ -1,1 +1,4 @@
 A small experiment to make a GTK/Cairo based 3D renderer and rasterizer
+
+Try './play.py models/teapot.obj' to see what it can do.
+For requirements just get everything in play.py.

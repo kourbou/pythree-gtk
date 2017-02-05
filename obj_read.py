@@ -38,7 +38,7 @@ class ObjReader(object):
                 minY = min(yf, minY)
                 minZ = min(zf, minZ)
 
-                self.vertices.append(mat([xf, yf, zf, 1.]))
+                self.vertices.append(mat([[xf], [yf], [zf], [1.]]))
             elif data[0] == 'f':
                 k.append([int(data[1].split('/')[0])-1, int(data[2].split('/')[0])-1])
                 k.append([int(data[2].split('/')[0])-1, int(data[3].split('/')[0])-1])

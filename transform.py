@@ -27,10 +27,10 @@ def scale_transform(ax, by, cz):
 
 # Where ax, by and cz are units
 def translate_transform(ax, by, cz):
-    return np.matrix([[ 1,  0,  0,  0],
-                      [ 0,  1,  0,  0],
-                      [ 0,  0,  1,  0],
-                      [ax, by, cz,  1]])
+    return np.matrix([[ 1,  0,  0, ax],
+                      [ 0,  1,  0, by],
+                      [ 0,  0,  1, cz],
+                      [ 0,  0,  0,  1]])
 
 # Where ax, by, and cz are angles in degrees
 def rotate_transform(ax, by, cz):
